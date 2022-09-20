@@ -4,11 +4,11 @@ app = Flask(__name__)
 @app.route("/")
 def initial():
     return render_template("index1.html")
-@app.route("/")
+@app.route("/login")
 def index():
     if request.method == "GET":
         var1 = request.args.get('email')
-        return redirect(url_for("redicrected_page" , var = var1))
+        return "<h1>var1</h1>"#redirect(url_for("redicrected_page" , var = var1))
 @app.route("/redirected")
 def redicrected_page(var):
     return var
