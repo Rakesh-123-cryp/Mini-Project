@@ -3,7 +3,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def initial():
-    return render_template("index1.html")
+    return render_template(r"User/rakesh/Desktop/Kivy_app/Mini-Project/index1.html")
+
 @app.route("/login")
 def index():
     if request.method == "GET":
