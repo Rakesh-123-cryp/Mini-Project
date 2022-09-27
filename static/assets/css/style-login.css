@@ -261,7 +261,7 @@
 .wrongpass_format {
     -webkit-animation-name: wrongpass_format;
     -webkit-animation-duration: 0.5s;
-    -webkit-transform-origin:1000% 1000%;
+    -webkit-transform-origin:10000% 10000%;
     -webkit-animation-iteration-count: infinite;
 }
 .wrongpass_format {
