@@ -69,7 +69,7 @@ def home_button():
         return redirect(url_for("logged", username = session['username']))
     return redirect(url_for("initial"))
 
-@app.route("/login", methods = ["POST","GET"])
+@app.route("/wrongpass", methods = ["POST","GET"])
 def wrongpass():
     if session['status'] == False:
         if request.method == "POST" and request.form['submit'] == 'Login':
