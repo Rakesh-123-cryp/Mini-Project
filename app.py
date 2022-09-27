@@ -7,20 +7,22 @@ cur = my_db.cursor()
 app = Flask(__name__)
 app.secret_key = "abcd"
 
+"""
 @app.route("/guest/browse")
 def browse_guest():
     return render_template('browse.html', username = "Login")
+"""
 
 @app.route("/")
 def initial():
     session["status"] = False
     return render_template("index.html", username = "Login")
 
-@app.route("/<username>/browse")
-def browse_page(username):
+@app.route("/browse")
+def browse_page():
     if session['status'] == False:
-        return redirect(url_for("browse_guest"))
-    return render_template('browse.html', username = username)
+        return redirect(url_for("index"))
+    return redirect(url_for("index"))
 
 
 @app.route("/<username>")
@@ -45,7 +47,7 @@ def index():
                 session["username"] = Id_s[0][0]
                 return redirect(url_for("logged" , username = Id_s[0][0]))
         else:
-            return render_template("login.html")
+            return render_template("wrongpass.html")
 
 @app.route("/signup")
 def sign_up_page(var):
@@ -69,7 +71,7 @@ def home_button():
         return redirect(url_for("logged", username = session['username']))
     return redirect(url_for("initial"))
 
-@app.route("/wrongpass", methods = ["POST","GET"])
+@app.route("/login", methods = ["POST","GET"])
 def wrongpass():
     if session['status'] == False:
         if request.method == "POST" and request.form['submit'] == 'Login':
