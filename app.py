@@ -51,21 +51,17 @@ def index():
 
 
 @app.route("/signup")
-def sign_up_page(var):
+def sign_up_page():
     if request.method == "POST" and request.form['submit'] == 'Login':
         name = request.form['name']
         mail = request.form['email']
         passwd = request.form['email']
         cur.execute("INSERT INTO USERS VALUES('" + name + "','" + mail + "','" + passwd + "'" + ")")
-        with open ("files/customers.csv","w+") as file:
-            w = csv.writer(file)
-            details.append(request.form['name'])
-            details.append(request.form['email'])
-            details.append(request.form['password'])
-            details.append(request.form['confirm_password'])
-            w.writerow(details)
-        return redirect(url_for("logged" , username = details[0]))
-
+        session['status'] = True
+        session['username'] = name
+        return redirect(url_for("logged" , username = name))
+    else:
+        return render_template("signup.html")
 
 @app.route("/home")
 def home_button():
