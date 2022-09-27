@@ -42,7 +42,6 @@ def index():
             print(Id_s)
             if len(Id_s) == 0:
                 return redirect(url_for("wrongpass"))
-                return redirect(url_for("wrongpass"))
             else:
                 session["status"] = True
                 session["username"] = Id_s[0][0]
@@ -84,7 +83,6 @@ def wrongpass():
             Id_s = cur.fetchall()
             print(Id_s)
             if len(Id_s) == 0:
-                return render_template("wrongpass.html")
                 return redirect(url_for("wrongpass"))
             else:
                 session["status"] = True
