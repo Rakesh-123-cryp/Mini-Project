@@ -7,11 +7,11 @@ cur = my_db.cursor()
 app = Flask(__name__)
 app.secret_key = "abcd"
 
-"""
+
 @app.route("/guest/browse")
 def browse_guest():
     return render_template('browse.html', username = "Login")
-"""
+
 
 @app.route("/")
 def initial():
