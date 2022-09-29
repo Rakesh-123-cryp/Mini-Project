@@ -48,7 +48,8 @@ def index():
                 return redirect(url_for("logged" , username = Id_s[0][0]))
         else:
             return render_template("login.html")
-
+    else:
+        return redirect(url_for("my_profile" , username = session["username"]))
 
 @app.route("/signup")
 def sign_up_page():
@@ -87,7 +88,9 @@ def wrongpass():
         else:
             return render_template("wrongpass.html")
 
-
+@app.route("/<username>/profile")
+def my_profile(username):
+    
 @app.route("/terms")
 def terms():
     return render_template("terms.html")
