@@ -15,7 +15,7 @@
 
   <!-- Additional CSS Files -->
   <link rel="stylesheet" href={{ url_for('static',filename='assets/css/fontawesome.css') }}>
-  <link rel="stylesheet" href={{ url_for('static',filename='assets/css/main-style.css') }}>
+  <link rel="stylesheet" href={{ url_for('static',filename='assets/css/main-style-copy.css') }}>
   <link rel="stylesheet" href={{ url_for('static',filename='assets/css/owl.css') }}>
   <link rel="stylesheet" href={{ url_for('static',filename='assets/css/animate.css') }}>
 
@@ -25,6 +25,10 @@
 <body>
 
 
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="page-content">
 
     <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
@@ -50,7 +54,7 @@
                     <!-- ***** Search End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="{{url_for('home_button' , username = 'Login')}}" >Home</a></li>
+                        <li><a href="index.html" >Home</a></li>
                         <li><a href="{{url_for('browse_page' , username = 'Login')}}" class="active">Browse</a></li>
                         <!--
                         <li><a href="browse.html" class="active">Browse</a></li>-->
@@ -68,7 +72,69 @@
   </header>
   <!-- ***** Header Area End ***** -->
 
-  <center><br><br><br><br><br><h1> <a href="terms.html">Work In Progress</a></h1></center>
+  <!-- ***** Browser Section Start *****-->
 
+  <div class="live-stream">
+    <div class="col-lg-12">
+      <div class="heading-section">
+        <h4><em>Most Popular</em> Recipes</h4>
+      </div>
+    </div>
+    <div class="table">
+
+
+      <div class="table-container">
+
+        <table id="table"
+               data-toggle="table"
+               data-search="true"
+               data-filter-control="true"
+               data-show-export="true"
+               data-click-to-select="true"
+               data-toolbar="#toolbar">
+               {% for item in recipes %}
+
+          <thead>
+            <tr>
+              <th data-field="state" data-checkbox="true"></th>
+              <th data-field="prenom" data-filter-control="input" data-sortable="true">Prénom</th>
+              <th data-field="date" data-filter-control="select" data-sortable="true">Date</th>
+              <th data-field="examen" data-filter-control="select" data-sortable="true">Examen</th>
+              <th data-field="note" data-sortable="true">Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
+              <!--<td>{{recipe_name[item]}}</td>
+              <td>{{prep_time[item]}}</td>
+              <td>{{cuisine[item]}}</td>-->
+            </tr>
+
+          </tbody>
+        </table>
+        </div>
+
+
+
+    </div>
+
+
+      <div class="col-lg-12">
+        <div class="main-button">
+          <a href="#">Load More Recipes</a>
+        </div>
+      </div>
+    </div>
+  </table>
+  </div>
+
+  <!-- ***** Browse Section End-->
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
+<script src="/static/assets/js/table.js"></script>
+</html>

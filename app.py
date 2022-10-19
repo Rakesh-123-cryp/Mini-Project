@@ -88,9 +88,15 @@ def wrongpass():
         else:
             return render_template("wrongpass.html")
 
-@app.route("/<username>/profile")
-def my_profile(username):
-    
+@app.route("/<username>/recipie-add")
+def add_recipie(username):
+    if(request.method == 'POST' and request.form['submit']=="Submit"):
+        name_of_dish = request.form['name']
+        cuisine_of_dish = request.form['cuisine']
+        Ingredients = request.form['Ingredients']
+        recipies = request.form['Instructions']
+    return render_template('recipeadd.html')
+
 @app.route("/terms")
 def terms():
     return render_template("terms.html")

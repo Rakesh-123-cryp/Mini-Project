@@ -101,11 +101,11 @@
           <div class="formbg-outer">
             <div class="formbg">
               <div class="formbg-inner padding-horizontal--48">
-                
+
                 <div class="item">
                 <form id="stripe-login" method="post" action="#">
                   <div class="field padding-bottom--24">
-                    <label for="name">Name of Dish</label>
+                    <label for="name">Name of Recipie</label>
                     <input type="name" name="name" required>
                   </div>
                   <div class="field padding-bottom--24">
@@ -114,12 +114,12 @@
                     </div>
                     <input type="password" name="password" required>
                   </div>
-                  
+
                   <div class="field padding-bottom--24">
                     <div class="grid--50-50">
                       <label for="cuisine">Cuisine</label>
                       <br>
-                      <select>
+                      <select name="cuisine">
                         <option selected value="" disabled selected></option>
                         <option value="indian" >Indian</option>
                         <option value="italian">Italian</option>
@@ -133,18 +133,18 @@
                     <div class="grid--50-50">
                       <label for="recipe">Ingredients</label>
                     </div>
-                    <textarea rows="7"></textarea>
+                    <textarea rows="7" name="Ingredients" value="Ing"></textarea>
                   </div>
 
                   <div class="field padding-bottom--24">
                     <div class="grid--50-50">
                       <label for="recipe">Instructions</label>
                     </div>
-                    <textarea rows="7"></textarea>
+                    <textarea rows="7" name="Instructions"></textarea>
                   </div>
 
                   <div class="upload-button">
-                    <input type="file" id="myFile" name="filename"> 
+                    <input type="file" id="myFile" name="filename">
                   </div>
 
 
@@ -152,7 +152,7 @@
                     <input type="submit" name="submit" value="Submit">
                   </div>
                 </div>
-  
+
                 </form>
               </div>
             </div>
@@ -160,7 +160,7 @@
 
           <!-- ***** Entry Form End ***** -->
 
-          
+
 
         </div>
       </div>
